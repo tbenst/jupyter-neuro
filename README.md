@@ -1,0 +1,1 @@
+docker build -t jupyter-neuro . && docker run -d -p 8888:8888 -v ~/Dropbox/Science/notebooks/:/notebook
