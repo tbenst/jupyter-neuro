@@ -5,6 +5,8 @@ EXPOSE 8888
 
 RUN mkdir /notebooks
 
+run conda install bokeh
+
 VOLUME /notebooks
 WORKDIR /notebooks
 
