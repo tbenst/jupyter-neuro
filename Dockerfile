@@ -7,6 +7,8 @@ RUN pip install pyyaml
 
 RUN mkdir /notebooks
 
+run conda install bokeh
+
 VOLUME /notebooks
 WORKDIR /notebooks
 
