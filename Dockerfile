@@ -3,6 +3,8 @@ MAINTAINER Tyler Benster
 
 EXPOSE 8888
 
+RUN pip install pyyaml
+
 RUN mkdir /notebooks
 
 VOLUME /notebooks
