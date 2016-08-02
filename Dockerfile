@@ -7,6 +7,10 @@ RUN pip install pyyaml
 
 RUN mkdir /notebooks
 
+RUN git clone https://github.com/tbenst/glia.git
+
+RUN cd glia && python setup.py install
+
 run conda install bokeh
 
 VOLUME /notebooks
