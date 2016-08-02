@@ -11,7 +11,14 @@ RUN git clone https://github.com/tbenst/glia.git
 
 RUN cd glia && python setup.py install
 
-run conda install bokeh
+# TODO install octave and chronux
+# RUN apt-get update && apt-get install -y \
+# 	octave \
+# 	unzip
+
+# RUN wget http://chronux.org/chronuxFiles/filesReleases/chronux_2_12.zip
+
+RUN conda install bokeh
 
 VOLUME /notebooks
 WORKDIR /notebooks
