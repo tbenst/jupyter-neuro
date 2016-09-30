@@ -7,10 +7,6 @@ RUN pip install pyyaml
 
 RUN mkdir /notebooks
 
-RUN git clone https://github.com/tbenst/glia.git
-
-RUN cd glia && python setup.py install
-
 # TODO install octave and chronux
 # RUN apt-get update && apt-get install -y \
 # 	octave \
@@ -19,6 +15,9 @@ RUN cd glia && python setup.py install
 # RUN wget http://chronux.org/chronuxFiles/filesReleases/chronux_2_12.zip
 
 RUN conda install bokeh
+
+RUN git clone https://github.com/tbenst/glia.git
+RUN cd glia && python setup.py install
 
 VOLUME /notebooks
 WORKDIR /notebooks
