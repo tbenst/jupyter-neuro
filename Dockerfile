@@ -4,6 +4,7 @@ MAINTAINER Tyler Benster
 EXPOSE 8888
 
 RUN pip install pyyaml
+RUN pip install tqdm
 
 RUN mkdir /notebooks
 
@@ -16,6 +17,7 @@ RUN mkdir /notebooks
 
 RUN conda install bokeh
 
+ARG CACHE_DATE=2016-01-01
 RUN git clone https://github.com/tbenst/glia.git
 RUN cd glia && python setup.py install
 
