@@ -3,9 +3,6 @@ MAINTAINER Tyler Benster
 
 EXPOSE 8888
 
-RUN pip install pyyaml
-RUN pip install tqdm
-
 RUN mkdir /notebooks
 
 # TODO install octave and chronux
@@ -18,8 +15,10 @@ RUN mkdir /notebooks
 RUN conda install bokeh
 
 ARG CACHE_DATE=2016-01-01
-RUN git clone https://github.com/tbenst/glia.git
-RUN cd glia && python setup.py install
+RUN git clone -b acuity https://github.com/tbenst/glia.git
+WORKDIR glia
+RUN pip install -r requirements.txt
+RUN python setup.py install
 
 VOLUME /notebooks
 WORKDIR /notebooks
