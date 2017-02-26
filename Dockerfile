@@ -15,14 +15,12 @@ RUN mkdir /notebooks
 RUN conda install bokeh scikit-learn
 
 ARG CACHE_DATE=2016-01-01
+# RUN git clone https://github.com/tbenst/glia.git
 RUN git clone -b acuity https://github.com/tbenst/glia.git
 WORKDIR glia
 RUN pip install -r requirements.txt
 RUN python setup.py install
 
-ARG CACHE_DATE=2016-01-01
-RUN git clone https://github.com/tbenst/glia.git
-RUN cd glia && python setup.py install
 
 VOLUME /notebooks
 WORKDIR /notebooks
